@@ -1,4 +1,9 @@
 #Class: Grid, class that represents a board of a givin size
+#Notes:
+#   Grid acts as a board for Pieces to move around, they are not responsible for moving the pieces themselves
+#   Grids are responsible for catching errors (such as two pieces on one space)
+#   Grids follow the Algebraic Notation for Chess Boards [x values are alphabetic, y values are numeric]
+#   All empty spaces are indicated with the 'nil' object
 
 class Grid
     def initialize(name, sizeX=8, sizeY=8)
@@ -23,6 +28,13 @@ class Grid
         #method to move a piece from one position to the other
         #pos1: string in AN notation, first position (contains piece)
         #pos2: string in AN notation, second position (must be empty)
+        
+        #Tests:
+        if(pos1==nil)
+            raise "Error: No piece on space #{pos1}"
+        elsif(pos2!=nil)
+            raise "Error: Cannot move piece to #{pos2}, space already contains a piece"
+        end
         @grid[pos2[0]][pos2[1]] = @grid[pos1[0]][pos1[1]]
         @grid[pos1[0]][pos1[1]] = nil
     end

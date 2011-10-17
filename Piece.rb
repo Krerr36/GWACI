@@ -1,4 +1,7 @@
 #Class: Piece, class for any piece on the board, to be used as a parent class
+#Notes:
+#   Pieces are responsible for moving themselves around the Grid, not the Grid Class
+
 
 class Piece
     def initialize(name, grid=nil, pos=nil)
