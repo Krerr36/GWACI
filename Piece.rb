@@ -5,6 +5,7 @@
 
 class Piece
     def initialize(name, grid=nil, pos=nil)
+        #Initilaize method for class Piece
         #name: name of the piece
         #grid: grid object that the piece can prompt to move on
         #pos: string representing position in Algebraic Notation
@@ -18,8 +19,13 @@ class Piece
     end
 
     def moveToPos(pos)
+        #Method to move the piece from the current position to pos
         #pos: string in AN notation (must be empty)
         @grid.move(@pos, pos)
         @pos = pos
     end
+
+    def getName()
+        #Method to return piece name
+        return @name
 end
