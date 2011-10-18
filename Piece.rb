@@ -5,12 +5,19 @@
 
 class Piece
     def initialize(name, grid=nil, pos=nil)
-        #Initilaize method for class Piece
-        #name: name of the piece
-        #grid: grid object that the piece can prompt to move on
-        #pos: string representing position in Algebraic Notation
+        #Initilize method for class Piece
+        #name: [string] name of the piece
+        #grid: [Grid] object that the piece can prompt to move on
+        #pos: [string] representing position in Algebraic Notation
         @name = name
         @type = "generic piece"
+
+        if(grid == nil and pos!=nil)
+            raise "Piece #{@name} needs a grid to be place on"
+        elsif (grid != nil and pos==nil)
+            raise "Piece #{@name} needs a position to be placed on grid"
+        end
+
         if(grid!=nil and pos!=nil)
             @grid = grid
             @pos = pos
@@ -28,4 +35,5 @@ class Piece
     def getName()
         #Method to return piece name
         return @name
+    end
 end
