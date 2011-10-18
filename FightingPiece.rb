@@ -2,6 +2,9 @@
 #Notes:
 #
 
+req_dir = __FILE__.split("/")[0..__FILE__.split("/").length()-2].join("/")
+require "#{req_dir}/Piece"
+
 class FightingPiece < Piece
     def initialize(name, hp, mp, stats, grid=nil, pos=nil)
         #Initialize method for class Fighting Piece
