@@ -4,6 +4,7 @@
 #   Grids are responsible for catching errors (such as two pieces on one space)
 #   Grids follow the Algebraic Notation for Chess Boards [x values are alphabetic, y values are numeric]
 #   All empty spaces are indicated with the 'nil' object
+#   As of now it is the Grid's responsibility to take attacks from players and push them to targets (game mechanic?)
 
 class Grid
     def initialize(name, sizeX=8, sizeY=8)
@@ -51,4 +52,11 @@ class Grid
         end
     end
 
+    def pushCommand(aggressor, pos, command)
+        #method to push a command from a piece to another piece
+        #aggressor: [FightingPiece] attacking piece
+        #pos: [string] AN notation, position of targeted piece
+        #command: [string] command to use on target position
+        
+    end
 end

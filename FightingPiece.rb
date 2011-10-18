@@ -14,4 +14,11 @@ class FightingPiece < Piece
         @stats = stats
         @type = "fighting piece"
     end
+
+    def hit(pos, command)
+        #Method to use a command (i.e. "Attack") on space
+        #pos: [string] position in AN notation
+        #command: [string] command to use on position
+        @grid.pushCommand(self, pos, command)
+    end
 end 
